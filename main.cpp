@@ -87,7 +87,7 @@ int main() {
     const float BULLET_SPEED = 600.0f; 
     const float ZOMBIE_SPEED = 60.0f; 
     const float ZOMBIE_SPAWN_TIME = 0.5f; 
-    const float BALL_RADIUS = 5.f; 
+    const float BULLET_RADIUS = 5.f; 
     const float BULLET_RATE = 200; 
 
     sf::RenderWindow window(sf::VideoMode(WINDOW_W, WINDOW_H), "Defenda a Base!");
@@ -298,9 +298,9 @@ int main() {
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::F)) {
                 if (shootClock1.getElapsedTime().asMilliseconds() > BULLET_RATE) {
                     Bullet b;
-                    b.shape.setRadius(BALL_RADIUS); 
+                    b.shape.setRadius(BULLET_RADIUS); 
                     b.shape.setFillColor(player1.getFillColor());
-                    b.shape.setOrigin(BALL_RADIUS / 2.f, BALL_RADIUS / 2.f); 
+                    b.shape.setOrigin(BULLET_RADIUS / 2.f, BULLET_RADIUS / 2.f); 
                     b.shape.setPosition(player1.getPosition());
                     b.velocity = lastDir1 * BULLET_SPEED; 
                     bullets.push_back(b);
@@ -333,9 +333,9 @@ int main() {
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad0)) {
                 if (shootClock2.getElapsedTime().asMilliseconds() > BULLET_RATE) {
                     Bullet b;
-                    b.shape.setRadius(BALL_RADIUS); 
+                    b.shape.setRadius(BULLET_RADIUS); 
                     b.shape.setFillColor(player2.getFillColor());
-                    b.shape.setOrigin(BALL_RADIUS / 2.f, BALL_RADIUS / 2.f); 
+                    b.shape.setOrigin(BULLET_RADIUS / 2.f, BULLET_RADIUS / 2.f); 
                     b.shape.setPosition(player2.getPosition());
                     b.velocity = lastDir2 * BULLET_SPEED; 
                     bullets.push_back(b);
